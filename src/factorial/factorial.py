@@ -12,9 +12,9 @@ def factorial(num):
     if num < 0: 
         print("El factorial de un número negativo no existe")
         return 0
-    elif num == 0: 
+    elif num == 0: #factorial de 0 es igual a 1
         return 1
-    else: 
+    else:   # calcula el factorial del argumento
         fact = 1
         while(num > 1): 
             fact *= num 
@@ -26,37 +26,37 @@ if len(sys.argv) < 2:
     # Si no hay argumento, solicita un número de entrada
     entrada = input("Ingrese un número o rango (ej: 5, 4-8, -10, 5-): ")
 else:
-    entrada = sys.argv[1]
+    entrada = sys.argv[1] # si hay argumento lo utiliza
 
-# Verificar si es un rango
+# Verificar si el argumento es un rango
 if '-' in entrada:
     partes = entrada.split('-')
     
-    # "-10" (no tiene limite inferior, desde 1 hasta 10)
+    # Argumento  -10 (no tiene limite inferior, desde 1 hasta 10)
     if partes[0] == '' and partes[1] != '':
         inicio = 1
-        fin = int(partes[1])
+        fin = int(partes[1]) #limite inferior
         print(f"Calculando factoriales desde {inicio} hasta {fin}:")
-        for i in range(inicio, fin + 1):
+        for i in range(inicio, fin + 1): #calcula factorial para cada número
             print(f"Factorial {i}! = {factorial(i)}")
     
-    # "5-" (no tiene limite superior, desde 5 hasta 60)
+    # Argumento 5- (no tiene limite superior, desde 5 hasta 60)
     elif partes[0] != '' and partes[1] == '':
         inicio = int(partes[0])
-        fin = 60  # Límite superior por defecto
+        fin = 60  # Límite superior
         print(f"Calculando factoriales desde {inicio} hasta {fin}:")
-        for i in range(inicio, fin + 1):
+        for i in range(inicio, fin + 1): #calcula el factorial para cada número
             print(f"Factorial {i}! = {factorial(i)}")
     
-    # "4-8" (devuelve el rango)
+    # Argumento "4-8" (devuelve el rango)
     elif partes[0] != '' and partes[1] != '':
-        inicio = int(partes[0])
-        fin = int(partes[1])
+        inicio = int(partes[0]) #limite inferior
+        fin = int(partes[1]) #limite superior
         print(f"Calculando factoriales desde {inicio} hasta {fin}:")
-        for i in range(inicio, fin + 1):
+        for i in range(inicio, fin + 1): #calcula factorial para cada número en el rango
             print(f"Factorial {i}! = {factorial(i)}")
     
-    else:
+    else: #Formato ingresado invalido
         print("Formato no válido. Use: 5, 4-8, -10, 5-")
 else:
     num = int(entrada)
