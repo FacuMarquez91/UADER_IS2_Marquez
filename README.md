@@ -4,6 +4,7 @@
 
 
 Descripción del repositorio
+
 Este repositorio contiene los trabajos prácticos realizados para la materia Ingeniería de Software II de la carrera Licenciatura en Sistemas de Información, dictada en la Universidad Autónoma de Entre Ríos.
 
 
@@ -33,7 +34,7 @@ Programas
 
 Figura de Referencia
 
- * https://www.python.org/static/img/python-logo.png
+ ![python logo](https://www.python.org/static/img/python-logo.png)
 
 
 Enlaces de Interés
