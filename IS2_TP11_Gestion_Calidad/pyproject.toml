@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "is2-tp11-calidad"
+version = "1.0.0"
+description = "TP11: Collatz, filtros JSON-CSV y aseguramiento de calidad"
+requires-python = ">=3.12"
+license = "MIT"
+readme = "README.md"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=tp11_calidad --cov-report=term-missing --cov-fail-under=85"
+
+[tool.black]
+line-length = 100
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "D"]
+ignore = ["D203", "D213"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+files = ["src/tp11_calidad"]
+
+[tool.pyright]
+include = ["src/tp11_calidad"]
+typeCheckingMode = "strict"
